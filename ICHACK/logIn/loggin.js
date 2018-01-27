@@ -106,5 +106,16 @@
         $form.find('[type=submit]').addClass('error').html(options['btn-error']);
         $form.find('.login-form-main-message').addClass('show error').html(options['msg-error']);
     }
+    function dummy_submit_form($form)
+    {
+        if($form.valid())
+        {
+            form_loading($form);
+
+            setTimeout(function() {
+                form_success($form);
+            }, 2000);
+        }
+    }
 
 });
